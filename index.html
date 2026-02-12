@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vermillion — Logo Concept Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vermillion-deep: #7A3428;
+            --vermillion-mid: #9B4A3A;
+            --vermillion-bright: #C84C30;
+            --corten: #8B5E3C;
+            --cream: #F5F0E8;
+            --cream-light: #FAF7F2;
+            --sand: #E8DFD2;
+            --text-dark: #2A1F1A;
+            --text-mid: #5C4A3E;
+            --text-light: #8A7A6E;
+            --white: #FFFFFF;
+            --border: rgba(122, 52, 40, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--cream-light);
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--vermillion-deep);
+            color: var(--cream);
+            padding: 80px 40px 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--sand), var(--corten), var(--vermillion-bright), var(--vermillion-deep));
+        }
+        .hero-eyebrow {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 16px;
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 300;
+            font-size: clamp(36px, 5vw, 56px);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+        }
+        .hero .hero-sub {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 300;
+            font-style: italic;
+            opacity: 0.75;
+            margin-bottom: 32px;
+        }
+        .hero-meta {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.45;
+        }
+
+        /* ── NAV ── */
+        .concept-nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+        .concept-nav a {
+            display: block;
+            padding: 18px 28px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .concept-nav a:hover {
+            color: var(--vermillion-deep);
+            border-bottom-color: var(--vermillion-bright);
+        }
+
+        /* ── MAIN ── */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── INTRO ── */
+        .intro {
+            max-width: 720px;
+            margin: 60px auto 50px;
+            text-align: center;
+        }
+        .intro h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 400;
+            font-size: 28px;
+            color: var(--vermillion-deep);
+            margin-bottom: 16px;
+        }
+        .intro p {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.75;
+        }
+        .intro .themes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .intro .theme-tag {
+            display: inline-block;
+            padding: 5px 14px;
+            background: var(--sand);
+            color: var(--corten);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 20px;
+        }
+
+        /* ── CONCEPT SECTIONS ── */
+        .concept-section {
+            margin: 64px 0;
+        }
+        .concept-header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 12px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--vermillion-deep);
+        }
+        .concept-number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 48px;
+            font-weight: 300;
+            color: var(--vermillion-deep);
+            line-height: 1;
+        }
+        .concept-title-block h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+        .concept-title-block p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin-top: 2px;
+        }
+
+        /* ── LOGO GRID ── */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .logo-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .logo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(122, 52, 40, 0.1);
+        }
+        .logo-card.featured {
+            grid-column: span 2;
+        }
+        .logo-card.featured .logo-img-wrap {
+            padding: 48px;
+        }
+
+        .logo-img-wrap {
+            padding: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            background: var(--white);
+            cursor: pointer;
+            position: relative;
+        }
+        .logo-card.featured .logo-img-wrap {
+            min-height: 320px;
+        }
+        .logo-img-wrap img {
+            max-width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+        }
+        .logo-card.featured .logo-img-wrap img {
+            max-height: 260px;
+        }
+
+        /* Dark preview toggle */
+        .logo-img-wrap.dark-bg {
+            background: var(--vermillion-deep);
+        }
+
+        .logo-card-footer {
+            padding: 14px 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-card-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        .logo-card-actions {
+            display: flex;
+            gap: 6px;
+        }
+        .logo-card-actions button {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--cream-light);
+            color: var(--text-mid);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.15s;
+        }
+        .logo-card-actions button:hover {
+            background: var(--vermillion-deep);
+            color: var(--cream);
+            border-color: var(--vermillion-deep);
+        }
+        .logo-card-actions button.active {
+            background: var(--vermillion-deep);
+            color: var(--cream);
+            border-color: var(--vermillion-deep);
+        }
+
+        /* Star badge */
+        .star-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 28px;
+            height: 28px;
+            background: var(--vermillion-bright);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 13px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .logo-card.favorited .star-badge {
+            opacity: 1;
+        }
+
+        /* ── LIGHTBOX ── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(42, 31, 26, 0.92);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 40px;
+        }
+        .lightbox.open {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: var(--cream);
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .lightbox-label {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--cream);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+        }
+        .lightbox-bg-toggle {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: var(--cream);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .lightbox-bg-toggle:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* ── FEEDBACK SECTION ── */
+        .feedback-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 48px;
+            margin: 80px 0 40px;
+            border: 1px solid var(--border);
+        }
+        .feedback-section h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--vermillion-deep);
+            margin-bottom: 8px;
+        }
+        .feedback-section > p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 28px;
+        }
+        .favorites-summary {
+            background: var(--cream-light);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            min-height: 56px;
+        }
+        .favorites-summary .label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        .favorites-summary .fav-list {
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        .favorites-summary .fav-list .empty {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .feedback-grid label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            display: block;
+        }
+        .feedback-grid input,
+        .feedback-grid select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--cream-light);
+        }
+        .feedback-grid input:focus,
+        .feedback-grid select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--vermillion-bright);
+            box-shadow: 0 0 0 3px rgba(200, 76, 48, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background: var(--cream-light);
+            resize: vertical;
+            min-height: 120px;
+            margin-bottom: 16px;
+        }
+
+        .feedback-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .btn-primary {
+            padding: 12px 32px;
+            background: var(--vermillion-deep);
+            color: var(--cream);
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--vermillion-mid);
+        }
+        .btn-secondary {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--text-mid);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--vermillion-bright);
+            color: var(--vermillion-deep);
+        }
+        .copy-status {
+            font-size: 13px;
+            color: var(--vermillion-bright);
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .copy-status.show {
+            opacity: 1;
+        }
+
+        /* ── FOOTER ── */
+        .page-footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+        .page-footer a {
+            color: var(--vermillion-deep);
+            text-decoration: none;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .hero { padding: 50px 24px 44px; }
+            .concept-nav { overflow-x: auto; justify-content: flex-start; }
+            .concept-nav a { padding: 14px 18px; white-space: nowrap; font-size: 11px; }
+            .concept-header { flex-direction: column; gap: 4px; }
+            .concept-number { font-size: 36px; }
+            .logo-grid { grid-template-columns: 1fr; }
+            .logo-card.featured { grid-column: span 1; }
+            .feedback-grid { grid-template-columns: 1fr; }
+            .feedback-section { padding: 28px 20px; }
+            .main-content { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-eyebrow">Alda Strategic / Hampton Design</div>
+        <h1>VERMILLION <em>Logo Concepts</em></h1>
+        <div class="hero-sub">Place Brand Identity Exploration</div>
+        <div class="hero-meta">Sanford, North Carolina &mdash; A Mattamy Community</div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="concept-nav">
+        <a href="#earthen-strata">Earthen Strata</a>
+        <a href="#winding-path">Winding Path</a>
+        <a href="#vermillion-leaf">Vermillion Leaf</a>
+        <a href="#feedback">Feedback</a>
+    </nav>
+
+    <div class="main-content">
+
+        <!-- INTRO -->
+        <div class="intro">
+            <h2>Three Directions, One Vision</h2>
+            <p>
+                Each concept direction draws from Vermillion's unique brand story &mdash;
+                the geological heritage of Piedmont clay, the connected trails that thread
+                neighbors together, and the natural sanctuary of preserved countryside.
+                Click any logo to enlarge. Star your favorites.
+            </p>
+            <div class="themes">
+                <span class="theme-tag">Nature</span>
+                <span class="theme-tag">Connection</span>
+                <span class="theme-tag">Community</span>
+                <span class="theme-tag">Brick Heritage</span>
+                <span class="theme-tag">Piedmont Clay</span>
+                <span class="theme-tag">Vermillion</span>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════
+             CONCEPT 1 — EARTHEN STRATA
+             ═══════════════════════════════════════════ -->
+        <section class="concept-section" id="earthen-strata">
+            <div class="concept-header">
+                <span class="concept-number">01</span>
+                <div class="concept-title-block">
+                    <h3>Earthen Strata</h3>
+                    <p>Where ancient coastal sand meets Piedmont clay &mdash; flowing geological layers form the brand mark</p>
+                </div>
+            </div>
+
+            <div class="logo-grid">
+                <div class="logo-card featured" data-name="Strata V">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/01-earthen-strata-v.png" alt="Earthen Strata V mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Strata V</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Strata Circle">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/09-strata-circle.png" alt="Strata circle mark with Mattamy tagline">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Strata Circle</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Strata Shield">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/08-strata-shield.png" alt="Strata shield/crest mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Strata Shield</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Wide Open V">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/10-strata-wide-v.png" alt="Wide open V strata mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Wide Open V</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Strata Vessel">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/06-earthen-strata-vessel.png" alt="Strata vessel mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Strata Vessel</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Horizontal Lockup">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/07-earthen-strata-horizontal.png" alt="Horizontal lockup with strata mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Horizontal Lockup</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             CONCEPT 2 — WINDING PATH
+             ═══════════════════════════════════════════ -->
+        <section class="concept-section" id="winding-path">
+            <div class="concept-header">
+                <span class="concept-number">02</span>
+                <div class="concept-title-block">
+                    <h3>The Winding Path</h3>
+                    <p>Trails and streams that thread neighbors together &mdash; organic flowing forms suggest connection</p>
+                </div>
+            </div>
+
+            <div class="logo-grid">
+                <div class="logo-card" data-name="Minimal Stroke">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/05-winding-path-minimal.png" alt="Minimal winding path stroke">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Minimal Stroke</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Path Threads">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/11-path-threads.png" alt="Three path threads forming V">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Path Threads</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Topographic Contour">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/12-topo-contour.png" alt="Topographic contour lines mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Topographic Contour</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             CONCEPT 3 — VERMILLION LEAF
+             ═══════════════════════════════════════════ -->
+        <section class="concept-section" id="vermillion-leaf">
+            <div class="concept-header">
+                <span class="concept-number">03</span>
+                <div class="concept-title-block">
+                    <h3>The Vermillion Leaf</h3>
+                    <p>Plant your roots in a community as timeless as the land &mdash; nature meets brick-making heritage</p>
+                </div>
+            </div>
+
+            <div class="logo-grid">
+                <div class="logo-card" data-name="Brick Veins">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/04-leaf-brick-veins.png" alt="Leaf with herringbone brick vein pattern">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Brick Veins</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Double Leaf">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/13-double-leaf.png" alt="Two overlapping leaves forming V">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Double Leaf</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Leaf &amp; Roots">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/14-leaf-roots.png" alt="Leaf with roots extending below">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Leaf &amp; Roots</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Abstract Leaf">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/15-leaf-abstract.png" alt="Ultra-minimal abstract leaf mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Abstract Leaf</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logo-card" data-name="Piedmont Oak">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/16-oak-leaf.png" alt="Piedmont oak leaf with brick-pattern veins">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Piedmont Oak</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             FEEDBACK
+             ═══════════════════════════════════════════ -->
+        <section class="feedback-section" id="feedback">
+            <h3>Share Your Feedback</h3>
+            <p>Star your favorites above, then use this form to capture any thoughts, edits, or direction.</p>
+
+            <div class="favorites-summary">
+                <div class="label">Your Favorites</div>
+                <div class="fav-list" id="fav-list">
+                    <span class="empty">Click the &#9734; star on any logo above to mark it as a favorite</span>
+                </div>
+            </div>
+
+            <div class="feedback-grid">
+                <div>
+                    <label>Overall Direction Preference</label>
+                    <select id="fb-direction">
+                        <option value="">Select a direction...</option>
+                        <option value="earthen-strata">Earthen Strata (Geology)</option>
+                        <option value="winding-path">The Winding Path (Connection)</option>
+                        <option value="vermillion-leaf">Vermillion Leaf (Nature)</option>
+                        <option value="mix">Mix of directions</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Typography Feel</label>
+                    <select id="fb-type">
+                        <option value="">Select preference...</option>
+                        <option value="elegant-serif">Elegant serif (as shown)</option>
+                        <option value="bolder-serif">Bolder / heavier serif</option>
+                        <option value="sans-serif">Clean sans-serif</option>
+                        <option value="mixed">Serif + sans-serif combo</option>
+                    </select>
+                </div>
+            </div>
+
+            <label style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; display: block;">
+                Notes &amp; Edits
+            </label>
+            <textarea id="fb-notes" placeholder="Any thoughts on specific logos, color adjustments, mark refinements, tagline ideas..."></textarea>
+
+            <div class="feedback-actions">
+                <button class="btn-primary" onclick="copyFeedback()">Copy Feedback Summary</button>
+                <button class="btn-secondary" onclick="emailFeedback()">Open in Email</button>
+                <span class="copy-status" id="copy-status">Copied to clipboard!</span>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="page-footer">
+        Prepared by <a href="https://aldastrategic.com" target="_blank">Alda Strategic</a> &times; Hampton Design &mdash; February 2026
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-label" id="lightbox-label"></div>
+        <button class="lightbox-bg-toggle" onclick="toggleLightboxBg(event)">Toggle Background</button>
+    </div>
+
+    <script>
+        // ── Favorites ──
+        const favorites = new Set();
+
+        function toggleFav(e) {
+            e.stopPropagation();
+            const card = e.target.closest('.logo-card');
+            const name = card.dataset.name;
+            const btn = e.target;
+
+            if (favorites.has(name)) {
+                favorites.delete(name);
+                card.classList.remove('favorited');
+                btn.innerHTML = '&#9734;';
+                btn.classList.remove('active');
+            } else {
+                favorites.add(name);
+                card.classList.add('favorited');
+                btn.innerHTML = '&#9733;';
+                btn.classList.add('active');
+            }
+            updateFavList();
+        }
+
+        function updateFavList() {
+            const el = document.getElementById('fav-list');
+            if (favorites.size === 0) {
+                el.innerHTML = '<span class="empty">Click the &#9734; star on any logo above to mark it as a favorite</span>';
+            } else {
+                el.innerHTML = Array.from(favorites).map(n =>
+                    '<span style="display:inline-block;padding:3px 12px;background:var(--sand);border-radius:16px;margin:3px 4px;font-size:13px;">' + n + '</span>'
+                ).join('');
+            }
+        }
+
+        // ── Dark Background Toggle ──
+        function toggleDark(e) {
+            e.stopPropagation();
+            const wrap = e.target.closest('.logo-card').querySelector('.logo-img-wrap');
+            wrap.classList.toggle('dark-bg');
+        }
+
+        // ── Lightbox ──
+        let lightboxDark = false;
+
+        function openLightbox(wrap) {
+            const img = wrap.querySelector('img');
+            const card = wrap.closest('.logo-card');
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const lbLabel = document.getElementById('lightbox-label');
+
+            // Use 4x version if available
+            const src = img.src.replace('.png', '-4x.png');
+            lbImg.src = src;
+            lbImg.onerror = function() { this.src = img.src; };
+            lbLabel.textContent = card.dataset.name;
+            lightboxDark = false;
+            lbImg.style.background = 'white';
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(e) {
+            if (e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function toggleLightboxBg(e) {
+            e.stopPropagation();
+            lightboxDark = !lightboxDark;
+            document.getElementById('lightbox-img').style.background = lightboxDark ? '#7A3428' : 'white';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ── Feedback ──
+        function buildFeedbackText() {
+            const favs = favorites.size > 0 ? Array.from(favorites).join(', ') : 'None selected';
+            const dir = document.getElementById('fb-direction').value || 'Not specified';
+            const type = document.getElementById('fb-type').value || 'Not specified';
+            const notes = document.getElementById('fb-notes').value || 'No additional notes';
+
+            const dirLabels = {
+                'earthen-strata': 'Earthen Strata (Geology)',
+                'winding-path': 'The Winding Path (Connection)',
+                'vermillion-leaf': 'Vermillion Leaf (Nature)',
+                'mix': 'Mix of directions',
+                'Not specified': 'Not specified'
+            };
+            const typeLabels = {
+                'elegant-serif': 'Elegant serif (as shown)',
+                'bolder-serif': 'Bolder / heavier serif',
+                'sans-serif': 'Clean sans-serif',
+                'mixed': 'Serif + sans-serif combo',
+                'Not specified': 'Not specified'
+            };
+
+            return `VERMILLION — Logo Feedback\n` +
+                   `${'='.repeat(35)}\n\n` +
+                   `Favorites: ${favs}\n\n` +
+                   `Direction Preference: ${dirLabels[dir] || dir}\n` +
+                   `Typography Feel: ${typeLabels[type] || type}\n\n` +
+                   `Notes:\n${notes}`;
+        }
+
+        function copyFeedback() {
+            const text = buildFeedbackText();
+            navigator.clipboard.writeText(text).then(() => {
+                const status = document.getElementById('copy-status');
+                status.classList.add('show');
+                setTimeout(() => status.classList.remove('show'), 2500);
+            });
+        }
+
+        function emailFeedback() {
+            const text = buildFeedbackText();
+            const subject = encodeURIComponent('Vermillion Logo Feedback');
+            const body = encodeURIComponent(text);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
