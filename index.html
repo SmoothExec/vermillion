@@ -21,10 +21,10 @@
             --text-light: #8A7A6E;
             --white: #FFFFFF;
             --border: rgba(122, 52, 40, 0.12);
+            --forest: #2D3D2A;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
@@ -46,44 +46,37 @@
         .hero::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 4px;
             background: linear-gradient(90deg, var(--sand), var(--corten), var(--vermillion-bright), var(--vermillion-deep));
         }
         .hero-eyebrow {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            opacity: 0.6;
-            margin-bottom: 16px;
+            font-size: 11px; font-weight: 500;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            opacity: 0.6; margin-bottom: 16px;
         }
         .hero h1 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-weight: 300;
-            font-size: clamp(36px, 5vw, 56px);
-            letter-spacing: 0.08em;
-            margin-bottom: 8px;
+            font-weight: 300; font-size: clamp(36px, 5vw, 56px);
+            letter-spacing: 0.08em; margin-bottom: 8px;
         }
-        .hero h1 em {
-            font-style: italic;
-            font-weight: 400;
-        }
+        .hero h1 em { font-style: italic; font-weight: 400; }
         .hero .hero-sub {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(18px, 2.5vw, 24px);
-            font-weight: 300;
-            font-style: italic;
-            opacity: 0.75;
-            margin-bottom: 32px;
+            font-size: clamp(18px, 2.5vw, 24px); font-weight: 300;
+            font-style: italic; opacity: 0.75; margin-bottom: 12px;
         }
         .hero-meta {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.45;
+            font-size: 12px; letter-spacing: 0.1em;
+            text-transform: uppercase; opacity: 0.45;
+        }
+        .hero-round-tag {
+            display: inline-block; margin-top: 20px;
+            padding: 6px 18px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.25);
+            font-size: 11px; font-weight: 500;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            opacity: 0.6;
         }
 
         /* ── NAV ── */
@@ -91,22 +84,15 @@
             background: var(--white);
             border-bottom: 1px solid var(--border);
             padding: 0 40px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            gap: 0;
+            position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: center; gap: 0;
+            flex-wrap: wrap;
         }
         .concept-nav a {
-            display: block;
-            padding: 18px 28px;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-mid);
-            text-decoration: none;
+            display: block; padding: 18px 22px;
+            font-size: 11px; font-weight: 500;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--text-mid); text-decoration: none;
             border-bottom: 2px solid transparent;
             transition: all 0.2s;
         }
@@ -114,96 +100,69 @@
             color: var(--vermillion-deep);
             border-bottom-color: var(--vermillion-bright);
         }
+        .concept-nav .nav-divider {
+            width: 1px; background: var(--border);
+            margin: 12px 4px; align-self: stretch;
+        }
 
         /* ── MAIN ── */
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* ── INTRO ── */
         .intro {
-            max-width: 720px;
-            margin: 60px auto 50px;
-            text-align: center;
+            max-width: 720px; margin: 60px auto 50px; text-align: center;
         }
         .intro h2 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-weight: 400;
-            font-size: 28px;
-            color: var(--vermillion-deep);
-            margin-bottom: 16px;
+            font-weight: 400; font-size: 28px;
+            color: var(--vermillion-deep); margin-bottom: 16px;
         }
         .intro p {
-            font-size: 15px;
-            color: var(--text-mid);
-            line-height: 1.75;
+            font-size: 15px; color: var(--text-mid); line-height: 1.75;
         }
         .intro .themes {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
+            display: flex; flex-wrap: wrap;
+            justify-content: center; gap: 8px; margin-top: 20px;
         }
         .intro .theme-tag {
-            display: inline-block;
-            padding: 5px 14px;
-            background: var(--sand);
-            color: var(--corten);
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            display: inline-block; padding: 5px 14px;
+            background: var(--sand); color: var(--corten);
+            font-size: 11px; font-weight: 500;
+            letter-spacing: 0.08em; text-transform: uppercase;
             border-radius: 20px;
         }
 
         /* ── CONCEPT SECTIONS ── */
-        .concept-section {
-            margin: 64px 0;
-        }
+        .concept-section { margin: 64px 0; }
         .concept-header {
-            display: flex;
-            align-items: baseline;
-            gap: 16px;
-            margin-bottom: 12px;
-            padding-bottom: 14px;
+            display: flex; align-items: baseline; gap: 16px;
+            margin-bottom: 12px; padding-bottom: 14px;
             border-bottom: 2px solid var(--vermillion-deep);
         }
         .concept-number {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 48px;
-            font-weight: 300;
-            color: var(--vermillion-deep);
-            line-height: 1;
+            font-size: 48px; font-weight: 300;
+            color: var(--vermillion-deep); line-height: 1;
         }
         .concept-title-block h3 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: var(--text-dark);
+            font-size: 28px; font-weight: 400; color: var(--text-dark);
         }
         .concept-title-block p {
-            font-size: 13px;
-            color: var(--text-light);
-            line-height: 1.5;
-            margin-top: 2px;
+            font-size: 13px; color: var(--text-light);
+            line-height: 1.5; margin-top: 2px;
         }
 
         /* ── LOGO GRID ── */
         .logo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 28px;
+            gap: 24px; margin-top: 28px;
         }
 
         .logo-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
+            background: var(--white); border-radius: 12px;
+            overflow: hidden; border: 1px solid var(--border);
             transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
         }
@@ -211,332 +170,220 @@
             transform: translateY(-3px);
             box-shadow: 0 12px 40px rgba(122, 52, 40, 0.1);
         }
-        .logo-card.featured {
-            grid-column: span 2;
-        }
-        .logo-card.featured .logo-img-wrap {
-            padding: 48px;
-        }
+        .logo-card.featured { grid-column: span 2; }
+        .logo-card.featured .logo-img-wrap { padding: 48px; }
 
         .logo-img-wrap {
-            padding: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 280px;
-            background: var(--white);
-            cursor: pointer;
-            position: relative;
+            padding: 36px; display: flex;
+            align-items: center; justify-content: center;
+            min-height: 280px; background: var(--white);
+            cursor: pointer; position: relative;
         }
-        .logo-card.featured .logo-img-wrap {
-            min-height: 320px;
-        }
+        .logo-card.featured .logo-img-wrap { min-height: 320px; }
         .logo-img-wrap img {
-            max-width: 100%;
-            max-height: 220px;
-            object-fit: contain;
+            max-width: 100%; max-height: 220px; object-fit: contain;
         }
-        .logo-card.featured .logo-img-wrap img {
-            max-height: 260px;
-        }
-
-        /* Dark preview toggle */
-        .logo-img-wrap.dark-bg {
-            background: var(--vermillion-deep);
-        }
+        .logo-card.featured .logo-img-wrap img { max-height: 260px; }
+        .logo-img-wrap.dark-bg { background: var(--vermillion-deep); }
 
         .logo-card-footer {
-            padding: 14px 20px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            padding: 14px 20px; border-top: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
         }
         .logo-card-name {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-dark);
+            font-size: 13px; font-weight: 500; color: var(--text-dark);
         }
-        .logo-card-actions {
-            display: flex;
-            gap: 6px;
-        }
+        .logo-card-actions { display: flex; gap: 6px; }
         .logo-card-actions button {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: var(--cream-light);
-            color: var(--text-mid);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            transition: all 0.15s;
+            width: 32px; height: 32px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--cream-light);
+            color: var(--text-mid); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; transition: all 0.15s;
         }
         .logo-card-actions button:hover {
             background: var(--vermillion-deep);
-            color: var(--cream);
-            border-color: var(--vermillion-deep);
+            color: var(--cream); border-color: var(--vermillion-deep);
         }
         .logo-card-actions button.active {
             background: var(--vermillion-deep);
-            color: var(--cream);
-            border-color: var(--vermillion-deep);
+            color: var(--cream); border-color: var(--vermillion-deep);
         }
 
-        /* Star badge */
         .star-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            width: 28px;
-            height: 28px;
-            background: var(--vermillion-bright);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 13px;
-            opacity: 0;
-            transition: opacity 0.2s;
+            position: absolute; top: 12px; right: 12px;
+            width: 28px; height: 28px;
+            background: var(--vermillion-bright); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 13px;
+            opacity: 0; transition: opacity 0.2s;
         }
-        .logo-card.favorited .star-badge {
-            opacity: 1;
+        .logo-card.favorited .star-badge { opacity: 1; }
+
+        /* ── EARLIER SECTION ── */
+        .earlier-section {
+            margin: 80px 0 40px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+        .earlier-header {
+            text-align: center; margin-bottom: 40px;
+        }
+        .earlier-header h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 400; font-size: 24px;
+            color: var(--text-light); margin-bottom: 8px;
+        }
+        .earlier-header p {
+            font-size: 13px; color: var(--text-light);
+        }
+        .earlier-sub-section { margin-bottom: 40px; }
+        .earlier-sub-section h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 20px; font-weight: 400;
+            color: var(--text-mid); margin-bottom: 16px;
+            padding-bottom: 8px; border-bottom: 1px solid var(--border);
+        }
+        .earlier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .earlier-grid .logo-card .logo-img-wrap {
+            min-height: 200px; padding: 24px;
+        }
+        .earlier-grid .logo-card .logo-img-wrap img {
+            max-height: 160px;
         }
 
         /* ── LIGHTBOX ── */
         .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
+            display: none; position: fixed; inset: 0;
             background: rgba(42, 31, 26, 0.92);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            padding: 40px;
+            z-index: 1000; align-items: center;
+            justify-content: center; cursor: pointer; padding: 40px;
         }
-        .lightbox.open {
-            display: flex;
-        }
+        .lightbox.open { display: flex; }
         .lightbox img {
-            max-width: 90vw;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 8px;
+            max-width: 90vw; max-height: 85vh;
+            object-fit: contain; border-radius: 8px;
             box-shadow: 0 20px 80px rgba(0,0,0,0.4);
         }
         .lightbox-close {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255,255,255,0.1);
-            color: var(--cream);
-            font-size: 22px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute; top: 24px; right: 32px;
+            width: 44px; height: 44px; border-radius: 50%;
+            border: none; background: rgba(255,255,255,0.1);
+            color: var(--cream); font-size: 22px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
             transition: background 0.2s;
         }
-        .lightbox-close:hover {
-            background: rgba(255,255,255,0.2);
-        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
         .lightbox-label {
-            position: absolute;
-            bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--cream);
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            opacity: 0.7;
+            position: absolute; bottom: 32px; left: 50%;
+            transform: translateX(-50%); color: var(--cream);
+            font-size: 14px; font-weight: 500;
+            letter-spacing: 0.05em; opacity: 0.7;
         }
         .lightbox-bg-toggle {
-            position: absolute;
-            bottom: 32px;
-            right: 32px;
-            padding: 8px 18px;
-            border-radius: 20px;
+            position: absolute; bottom: 32px; right: 32px;
+            padding: 8px 18px; border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.2);
             background: rgba(255,255,255,0.08);
-            color: var(--cream);
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            cursor: pointer;
+            color: var(--cream); font-size: 12px; font-weight: 500;
+            letter-spacing: 0.05em; cursor: pointer;
             transition: background 0.2s;
         }
-        .lightbox-bg-toggle:hover {
-            background: rgba(255,255,255,0.15);
-        }
+        .lightbox-bg-toggle:hover { background: rgba(255,255,255,0.15); }
 
-        /* ── FEEDBACK SECTION ── */
+        /* ── FEEDBACK ── */
         .feedback-section {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 48px;
-            margin: 80px 0 40px;
+            background: var(--white); border-radius: 16px;
+            padding: 48px; margin: 80px 0 40px;
             border: 1px solid var(--border);
         }
         .feedback-section h3 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: var(--vermillion-deep);
-            margin-bottom: 8px;
+            font-size: 28px; font-weight: 400;
+            color: var(--vermillion-deep); margin-bottom: 8px;
         }
         .feedback-section > p {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 28px;
+            font-size: 14px; color: var(--text-light); margin-bottom: 28px;
         }
         .favorites-summary {
-            background: var(--cream-light);
-            border-radius: 10px;
-            padding: 20px 24px;
-            margin-bottom: 24px;
-            min-height: 56px;
+            background: var(--cream-light); border-radius: 10px;
+            padding: 20px 24px; margin-bottom: 24px; min-height: 56px;
         }
         .favorites-summary .label {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-light);
-            margin-bottom: 8px;
+            font-size: 11px; font-weight: 600;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--text-light); margin-bottom: 8px;
         }
-        .favorites-summary .fav-list {
-            font-size: 14px;
-            color: var(--text-dark);
-            line-height: 1.8;
-        }
-        .favorites-summary .fav-list .empty {
-            color: var(--text-light);
-            font-style: italic;
-        }
+        .favorites-summary .fav-list { font-size: 14px; color: var(--text-dark); line-height: 1.8; }
+        .favorites-summary .fav-list .empty { color: var(--text-light); font-style: italic; }
 
         .feedback-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 20px;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px; margin-bottom: 20px;
         }
         .feedback-grid label {
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-light);
-            margin-bottom: 6px;
-            display: block;
+            font-size: 12px; font-weight: 500;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--text-light); margin-bottom: 6px; display: block;
         }
         .feedback-grid input,
         .feedback-grid select {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background: var(--cream-light);
+            width: 100%; padding: 10px 14px;
+            border: 1px solid var(--border); border-radius: 8px;
+            font-size: 14px; font-family: 'Inter', sans-serif;
+            color: var(--text-dark); background: var(--cream-light);
         }
         .feedback-grid input:focus,
         .feedback-grid select:focus,
         textarea:focus {
-            outline: none;
-            border-color: var(--vermillion-bright);
+            outline: none; border-color: var(--vermillion-bright);
             box-shadow: 0 0 0 3px rgba(200, 76, 48, 0.1);
         }
-
         textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background: var(--cream-light);
-            resize: vertical;
-            min-height: 120px;
-            margin-bottom: 16px;
+            width: 100%; padding: 14px 16px;
+            border: 1px solid var(--border); border-radius: 8px;
+            font-size: 14px; font-family: 'Inter', sans-serif;
+            color: var(--text-dark); background: var(--cream-light);
+            resize: vertical; min-height: 120px; margin-bottom: 16px;
         }
-
-        .feedback-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
+        .feedback-actions { display: flex; gap: 12px; align-items: center; }
         .btn-primary {
-            padding: 12px 32px;
-            background: var(--vermillion-deep);
-            color: var(--cream);
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.2s;
+            padding: 12px 32px; background: var(--vermillion-deep);
+            color: var(--cream); border: none; border-radius: 8px;
+            font-size: 13px; font-weight: 600;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            cursor: pointer; transition: background 0.2s;
         }
-        .btn-primary:hover {
-            background: var(--vermillion-mid);
-        }
+        .btn-primary:hover { background: var(--vermillion-mid); }
         .btn-secondary {
-            padding: 12px 24px;
-            background: transparent;
-            color: var(--text-mid);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
+            padding: 12px 24px; background: transparent;
+            color: var(--text-mid); border: 1px solid var(--border);
+            border-radius: 8px; font-size: 13px; font-weight: 500;
+            cursor: pointer; transition: all 0.2s;
         }
-        .btn-secondary:hover {
-            border-color: var(--vermillion-bright);
-            color: var(--vermillion-deep);
-        }
+        .btn-secondary:hover { border-color: var(--vermillion-bright); color: var(--vermillion-deep); }
         .copy-status {
-            font-size: 13px;
-            color: var(--vermillion-bright);
-            font-weight: 500;
-            opacity: 0;
-            transition: opacity 0.3s;
+            font-size: 13px; color: var(--vermillion-bright);
+            font-weight: 500; opacity: 0; transition: opacity 0.3s;
         }
-        .copy-status.show {
-            opacity: 1;
-        }
+        .copy-status.show { opacity: 1; }
 
         /* ── FOOTER ── */
         .page-footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-light);
-            font-size: 12px;
-            letter-spacing: 0.05em;
+            text-align: center; padding: 40px;
+            color: var(--text-light); font-size: 12px; letter-spacing: 0.05em;
         }
-        .page-footer a {
-            color: var(--vermillion-deep);
-            text-decoration: none;
-        }
+        .page-footer a { color: var(--vermillion-deep); text-decoration: none; }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .hero { padding: 50px 24px 44px; }
             .concept-nav { overflow-x: auto; justify-content: flex-start; }
-            .concept-nav a { padding: 14px 18px; white-space: nowrap; font-size: 11px; }
+            .concept-nav a { padding: 14px 14px; white-space: nowrap; font-size: 10px; }
             .concept-header { flex-direction: column; gap: 4px; }
             .concept-number { font-size: 36px; }
             .logo-grid { grid-template-columns: 1fr; }
@@ -544,6 +391,8 @@
             .feedback-grid { grid-template-columns: 1fr; }
             .feedback-section { padding: 28px 20px; }
             .main-content { padding: 0 16px; }
+            .earlier-grid { grid-template-columns: 1fr 1fr; }
+            .nav-divider { display: none; }
         }
     </style>
 </head>
@@ -555,13 +404,18 @@
         <h1>VERMILLION <em>Logo Concepts</em></h1>
         <div class="hero-sub">Place Brand Identity Exploration</div>
         <div class="hero-meta">Sanford, North Carolina &mdash; A Mattamy Community</div>
+        <div class="hero-round-tag">Round 3 &mdash; Refined Directions</div>
     </div>
 
     <!-- NAV -->
     <nav class="concept-nav">
-        <a href="#earthen-strata">Earthen Strata</a>
-        <a href="#winding-path">Winding Path</a>
-        <a href="#vermillion-leaf">Vermillion Leaf</a>
+        <a href="#brick-heritage">Brick Heritage</a>
+        <a href="#home">Home</a>
+        <a href="#clay-earth">Clay / Earth</a>
+        <a href="#nature">Nature</a>
+        <a href="#typography">Typography</a>
+        <span class="nav-divider"></span>
+        <a href="#earlier">Earlier Work</a>
         <a href="#feedback">Feedback</a>
     </nav>
 
@@ -569,113 +423,81 @@
 
         <!-- INTRO -->
         <div class="intro">
-            <h2>Three Directions, One Vision</h2>
+            <h2>Refined Directions</h2>
             <p>
-                Each concept direction draws from Vermillion's unique brand story &mdash;
-                the geological heritage of Piedmont clay, the connected trails that thread
-                neighbors together, and the natural sanctuary of preserved countryside.
+                Round 3 explores new territory informed by the mood boards &mdash;
+                typography-forward, minimal, sophisticated. Organized by the four brand
+                themes, each concept is designed to feel at home embossed on stationery,
+                stamped into terracotta, or etched on a community monument.
                 Click any logo to enlarge. Star your favorites.
             </p>
             <div class="themes">
-                <span class="theme-tag">Nature</span>
-                <span class="theme-tag">Connection</span>
-                <span class="theme-tag">Community</span>
                 <span class="theme-tag">Brick Heritage</span>
-                <span class="theme-tag">Piedmont Clay</span>
-                <span class="theme-tag">Vermillion</span>
+                <span class="theme-tag">Home</span>
+                <span class="theme-tag">Clay / Land / Earth</span>
+                <span class="theme-tag">Nature / Connection</span>
+                <span class="theme-tag">Typography</span>
             </div>
         </div>
 
-        <!-- ═══════════════════════════════════════════
-             CONCEPT 1 — EARTHEN STRATA
-             ═══════════════════════════════════════════ -->
-        <section class="concept-section" id="earthen-strata">
+        <!-- ═══════════════════════════════
+             01 — BRICK HERITAGE
+             ═══════════════════════════════ -->
+        <section class="concept-section" id="brick-heritage">
             <div class="concept-header">
                 <span class="concept-number">01</span>
                 <div class="concept-title-block">
-                    <h3>Earthen Strata</h3>
-                    <p>Where ancient coastal sand meets Piedmont clay &mdash; flowing geological layers form the brand mark</p>
+                    <h3>Brick Heritage</h3>
+                    <p>Sanford, the Brick Capital of the USA &mdash; clean typography with architectural geometry</p>
                 </div>
             </div>
-
             <div class="logo-grid">
-                <div class="logo-card featured" data-name="Strata V">
+                <div class="logo-card featured" data-name="Wordmark">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/01-earthen-strata-v.png" alt="Earthen Strata V mark">
+                        <img src="selected/r3-01-brick-wordmark.png" alt="Clean wordmark">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Strata V</span>
+                        <span class="logo-card-name">Wordmark</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Strata Circle">
+                <div class="logo-card" data-name="Brick Monogram">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/09-strata-circle.png" alt="Strata circle mark with Mattamy tagline">
+                        <img src="selected/r3-02-brick-monogram.png" alt="V monogram with brick coursing">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Strata Circle</span>
+                        <span class="logo-card-name">Brick Monogram</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Strata Shield">
+                <div class="logo-card" data-name="Geometric V">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/08-strata-shield.png" alt="Strata shield/crest mark">
+                        <img src="selected/r3-03-brick-minimal-B.png" alt="Geometric V mark">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Strata Shield</span>
+                        <span class="logo-card-name">Geometric V</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Wide Open V">
+                <div class="logo-card" data-name="Heritage Stamp">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/10-strata-wide-v.png" alt="Wide open V strata mark">
+                        <img src="selected/r3-04-brick-stamp.png" alt="Circular heritage stamp">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Wide Open V</span>
-                        <div class="logo-card-actions">
-                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
-                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="logo-card" data-name="Strata Vessel">
-                    <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/06-earthen-strata-vessel.png" alt="Strata vessel mark">
-                        <span class="star-badge">&#9733;</span>
-                    </div>
-                    <div class="logo-card-footer">
-                        <span class="logo-card-name">Strata Vessel</span>
-                        <div class="logo-card-actions">
-                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
-                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="logo-card" data-name="Horizontal Lockup">
-                    <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/07-earthen-strata-horizontal.png" alt="Horizontal lockup with strata mark">
-                        <span class="star-badge">&#9733;</span>
-                    </div>
-                    <div class="logo-card-footer">
-                        <span class="logo-card-name">Horizontal Lockup</span>
+                        <span class="logo-card-name">Heritage Stamp</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
@@ -685,54 +507,51 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════
-             CONCEPT 2 — WINDING PATH
-             ═══════════════════════════════════════════ -->
-        <section class="concept-section" id="winding-path">
+        <!-- ═══════════════════════════════
+             02 — HOME
+             ═══════════════════════════════ -->
+        <section class="concept-section" id="home">
             <div class="concept-header">
                 <span class="concept-number">02</span>
                 <div class="concept-title-block">
-                    <h3>The Winding Path</h3>
-                    <p>Trails and streams that thread neighbors together &mdash; organic flowing forms suggest connection</p>
+                    <h3>Home</h3>
+                    <p>Editorial warmth, inviting elegance &mdash; luxury real estate with heart</p>
                 </div>
             </div>
-
             <div class="logo-grid">
-                <div class="logo-card" data-name="Minimal Stroke">
+                <div class="logo-card featured" data-name="Bold Wordmark">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/05-winding-path-minimal.png" alt="Minimal winding path stroke">
+                        <img src="selected/r3-06-home-mixed-type.png" alt="Bold mixed-type wordmark">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Minimal Stroke</span>
+                        <span class="logo-card-name">Bold Wordmark</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Path Threads">
+                <div class="logo-card" data-name="Chevron Roofline">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/11-path-threads.png" alt="Three path threads forming V">
+                        <img src="selected/r3-07-home-house-icon.png" alt="Minimal chevron roofline">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Path Threads</span>
+                        <span class="logo-card-name">Chevron Roofline</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Topographic Contour">
+                <div class="logo-card" data-name="Stacked Type">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/12-topo-contour.png" alt="Topographic contour lines mark">
+                        <img src="selected/r3-08-home-stacked.png" alt="Stacked VER/MILLION type">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Topographic Contour</span>
+                        <span class="logo-card-name">Stacked Type</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
@@ -742,82 +561,64 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════
-             CONCEPT 3 — VERMILLION LEAF
-             ═══════════════════════════════════════════ -->
-        <section class="concept-section" id="vermillion-leaf">
+        <!-- ═══════════════════════════════
+             03 — CLAY / LAND / EARTH
+             ═══════════════════════════════ -->
+        <section class="concept-section" id="clay-earth">
             <div class="concept-header">
                 <span class="concept-number">03</span>
                 <div class="concept-title-block">
-                    <h3>The Vermillion Leaf</h3>
-                    <p>Plant your roots in a community as timeless as the land &mdash; nature meets brick-making heritage</p>
+                    <h3>Clay / Land / Earth</h3>
+                    <p>Tactile, grounded, material &mdash; embossed in leather, stamped into terracotta</p>
                 </div>
             </div>
-
             <div class="logo-grid">
-                <div class="logo-card" data-name="Brick Veins">
+                <div class="logo-card featured" data-name="Terre">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/04-leaf-brick-veins.png" alt="Leaf with herringbone brick vein pattern">
+                        <img src="selected/r3-11-clay-terre.png" alt="Terre mark with coin seal">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Brick Veins</span>
+                        <span class="logo-card-name">Terre</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Double Leaf">
+                <div class="logo-card" data-name="Clay Stone">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/13-double-leaf.png" alt="Two overlapping leaves forming V">
+                        <img src="selected/r3-10-clay-earthy.png" alt="Clay stone with embedded V">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Double Leaf</span>
+                        <span class="logo-card-name">Clay Stone</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Leaf &amp; Roots">
+                <div class="logo-card" data-name="Kiln Arch">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/14-leaf-roots.png" alt="Leaf with roots extending below">
+                        <img src="selected/r3-12-clay-arch.png" alt="Arch doorway with V">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Leaf &amp; Roots</span>
+                        <span class="logo-card-name">Kiln Arch</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="logo-card" data-name="Abstract Leaf">
+                <div class="logo-card" data-name="Rolling Hills">
                     <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/15-leaf-abstract.png" alt="Ultra-minimal abstract leaf mark">
+                        <img src="selected/r3-19-hybrid-land.png" alt="Rolling hills landscape line">
                         <span class="star-badge">&#9733;</span>
                     </div>
                     <div class="logo-card-footer">
-                        <span class="logo-card-name">Abstract Leaf</span>
-                        <div class="logo-card-actions">
-                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
-                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="logo-card" data-name="Piedmont Oak">
-                    <div class="logo-img-wrap" onclick="openLightbox(this)">
-                        <img src="selected/16-oak-leaf.png" alt="Piedmont oak leaf with brick-pattern veins">
-                        <span class="star-badge">&#9733;</span>
-                    </div>
-                    <div class="logo-card-footer">
-                        <span class="logo-card-name">Piedmont Oak</span>
+                        <span class="logo-card-name">Rolling Hills</span>
                         <div class="logo-card-actions">
                             <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
                             <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
@@ -827,9 +628,314 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- ═══════════════════════════════
+             04 — NATURE / CONNECTION
+             ═══════════════════════════════ -->
+        <section class="concept-section" id="nature">
+            <div class="concept-header">
+                <span class="concept-number">04</span>
+                <div class="concept-title-block">
+                    <h3>Nature / Connection</h3>
+                    <p>Preserved countryside, winding trails, botanical sanctuary &mdash; organic marks with warmth</p>
+                </div>
+            </div>
+            <div class="logo-grid">
+                <div class="logo-card featured" data-name="Golden Oak">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-14-nature-golden-oak.png" alt="Golden oak leaf mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Golden Oak</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Brushstroke V">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-13-nature-simple-v.png" alt="Simple brushstroke V mark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Brushstroke V</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Bird">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-15-nature-bird.png" alt="Minimal bird in flight">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Bird</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Botanical Sprig">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-16-nature-botanical.png" alt="Botanical sprig integrated with V">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Botanical Sprig</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Dual-Tone V">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-20-hybrid-dual-tone.png" alt="Green V in circle with terracotta text">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Dual-Tone V</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════
+             05 — TYPOGRAPHY EXPLORATIONS
+             ═══════════════════════════════ -->
+        <section class="concept-section" id="typography">
+            <div class="concept-header">
+                <span class="concept-number">05</span>
+                <div class="concept-title-block">
+                    <h3>Typography Explorations</h3>
+                    <p>Type-only approaches &mdash; the word itself becomes the identity</p>
+                </div>
+            </div>
+            <div class="logo-grid">
+                <div class="logo-card" data-name="Editorial Rules">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-17-hybrid-terra.png" alt="Editorial wordmark with rules">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Editorial Rules</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Condensed Serif">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-21-type-condensed.png" alt="Condensed serif with hairline rules">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Condensed Serif</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Italic Serif">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-22-type-italic.png" alt="Elegant italic serif wordmark">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Italic Serif</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card" data-name="Modern Sans">
+                    <div class="logo-img-wrap" onclick="openLightbox(this)">
+                        <img src="selected/r3-24-type-sans.png" alt="Modern geometric sans-serif">
+                        <span class="star-badge">&#9733;</span>
+                    </div>
+                    <div class="logo-card-footer">
+                        <span class="logo-card-name">Modern Sans</span>
+                        <div class="logo-card-actions">
+                            <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                            <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════
+             EARLIER EXPLORATIONS (R1-R2)
+             ═══════════════════════════════ -->
+        <div class="earlier-section" id="earlier">
+            <div class="earlier-header">
+                <h2>Earlier Explorations</h2>
+                <p>Round 1 &amp; 2 concepts &mdash; more illustrative directions explored before refining above</p>
+            </div>
+
+            <div class="earlier-sub-section">
+                <h4>Earthen Strata (R1-R2)</h4>
+                <div class="earlier-grid">
+                    <div class="logo-card" data-name="R1 Strata V">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/01-earthen-strata-v.png" alt="Strata V mark">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Strata V</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R1 Strata Vessel">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/06-earthen-strata-vessel.png" alt="Strata vessel">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Strata Vessel</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R2 Strata Shield">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/08-strata-shield.png" alt="Strata shield">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Strata Shield</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R2 Strata Circle">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/09-strata-circle.png" alt="Strata circle">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Strata Circle</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="earlier-sub-section">
+                <h4>Winding Path (R1-R2)</h4>
+                <div class="earlier-grid">
+                    <div class="logo-card" data-name="R1 Minimal Stroke">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/05-winding-path-minimal.png" alt="Minimal path stroke">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Minimal Stroke</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R2 Path Threads">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/11-path-threads.png" alt="Path threads V">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Path Threads</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R2 Topo Contour">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/12-topo-contour.png" alt="Topographic contours">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Topo Contour</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="earlier-sub-section">
+                <h4>Vermillion Leaf (R1-R2)</h4>
+                <div class="earlier-grid">
+                    <div class="logo-card" data-name="R1 Brick Veins">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/04-leaf-brick-veins.png" alt="Leaf brick veins">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Brick Veins</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R2 Double Leaf">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/13-double-leaf.png" alt="Double leaf V">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Double Leaf</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logo-card" data-name="R2 Piedmont Oak">
+                        <div class="logo-img-wrap" onclick="openLightbox(this)">
+                            <img src="selected/16-oak-leaf.png" alt="Piedmont oak leaf">
+                            <span class="star-badge">&#9733;</span>
+                        </div>
+                        <div class="logo-card-footer">
+                            <span class="logo-card-name">Piedmont Oak</span>
+                            <div class="logo-card-actions">
+                                <button onclick="toggleDark(event)" title="Toggle dark background">&#9681;</button>
+                                <button onclick="toggleFav(event)" title="Favorite">&#9734;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════
              FEEDBACK
-             ═══════════════════════════════════════════ -->
+             ═══════════════════════════════ -->
         <section class="feedback-section" id="feedback">
             <h3>Share Your Feedback</h3>
             <p>Star your favorites above, then use this form to capture any thoughts, edits, or direction.</p>
@@ -846,9 +952,11 @@
                     <label>Overall Direction Preference</label>
                     <select id="fb-direction">
                         <option value="">Select a direction...</option>
-                        <option value="earthen-strata">Earthen Strata (Geology)</option>
-                        <option value="winding-path">The Winding Path (Connection)</option>
-                        <option value="vermillion-leaf">Vermillion Leaf (Nature)</option>
+                        <option value="brick-heritage">Brick Heritage</option>
+                        <option value="home">Home / Editorial</option>
+                        <option value="clay-earth">Clay / Land / Earth</option>
+                        <option value="nature">Nature / Connection</option>
+                        <option value="typography">Typography-Only</option>
                         <option value="mix">Mix of directions</option>
                     </select>
                 </div>
@@ -856,8 +964,10 @@
                     <label>Typography Feel</label>
                     <select id="fb-type">
                         <option value="">Select preference...</option>
-                        <option value="elegant-serif">Elegant serif (as shown)</option>
-                        <option value="bolder-serif">Bolder / heavier serif</option>
+                        <option value="elegant-serif">Elegant serif</option>
+                        <option value="bolder-serif">Bold / heavy serif</option>
+                        <option value="italic-serif">Italic serif (softer)</option>
+                        <option value="condensed-serif">Condensed / tall serif</option>
                         <option value="sans-serif">Clean sans-serif</option>
                         <option value="mixed">Serif + sans-serif combo</option>
                     </select>
@@ -867,7 +977,7 @@
             <label style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; display: block;">
                 Notes &amp; Edits
             </label>
-            <textarea id="fb-notes" placeholder="Any thoughts on specific logos, color adjustments, mark refinements, tagline ideas..."></textarea>
+            <textarea id="fb-notes" placeholder="Any thoughts on specific logos, color adjustments, mark refinements, tagline ideas, elements to combine..."></textarea>
 
             <div class="feedback-actions">
                 <button class="btn-primary" onclick="copyFeedback()">Copy Feedback Summary</button>
@@ -900,7 +1010,6 @@
             const card = e.target.closest('.logo-card');
             const name = card.dataset.name;
             const btn = e.target;
-
             if (favorites.has(name)) {
                 favorites.delete(name);
                 card.classList.remove('favorited');
@@ -981,26 +1090,11 @@
             const type = document.getElementById('fb-type').value || 'Not specified';
             const notes = document.getElementById('fb-notes').value || 'No additional notes';
 
-            const dirLabels = {
-                'earthen-strata': 'Earthen Strata (Geology)',
-                'winding-path': 'The Winding Path (Connection)',
-                'vermillion-leaf': 'Vermillion Leaf (Nature)',
-                'mix': 'Mix of directions',
-                'Not specified': 'Not specified'
-            };
-            const typeLabels = {
-                'elegant-serif': 'Elegant serif (as shown)',
-                'bolder-serif': 'Bolder / heavier serif',
-                'sans-serif': 'Clean sans-serif',
-                'mixed': 'Serif + sans-serif combo',
-                'Not specified': 'Not specified'
-            };
-
-            return `VERMILLION — Logo Feedback\n` +
-                   `${'='.repeat(35)}\n\n` +
+            return `VERMILLION — Logo Feedback (Round 3)\n` +
+                   `${'='.repeat(40)}\n\n` +
                    `Favorites: ${favs}\n\n` +
-                   `Direction Preference: ${dirLabels[dir] || dir}\n` +
-                   `Typography Feel: ${typeLabels[type] || type}\n\n` +
+                   `Direction Preference: ${dir}\n` +
+                   `Typography Feel: ${type}\n\n` +
                    `Notes:\n${notes}`;
         }
 
@@ -1015,7 +1109,7 @@
 
         function emailFeedback() {
             const text = buildFeedbackText();
-            const subject = encodeURIComponent('Vermillion Logo Feedback');
+            const subject = encodeURIComponent('Vermillion Logo Feedback — Round 3');
             const body = encodeURIComponent(text);
             window.location.href = `mailto:?subject=${subject}&body=${body}`;
         }
